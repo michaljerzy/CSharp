@@ -1,0 +1,11 @@
+C:\Users\Michał\Documents\Projekt3\Projekt3_Andrzejewski48660\Projekt3_Andrzejewski48660\bin\Debug\Projekt3_Andrzejewski48660.exe.config
+C:\Users\Michał\Documents\Projekt3\Projekt3_Andrzejewski48660\Projekt3_Andrzejewski48660\bin\Debug\Projekt3_Andrzejewski48660.exe
+C:\Users\Michał\Documents\Projekt3\Projekt3_Andrzejewski48660\Projekt3_Andrzejewski48660\bin\Debug\Projekt3_Andrzejewski48660.pdb
+C:\Users\Michał\Documents\Projekt3\Projekt3_Andrzejewski48660\Projekt3_Andrzejewski48660\obj\Debug\Projekt3_Andrzejewski48660.csprojAssemblyReference.cache
+C:\Users\Michał\Documents\Projekt3\Projekt3_Andrzejewski48660\Projekt3_Andrzejewski48660\obj\Debug\Projekt3_Andrzejewski48660.Properties.Resources.resources
+C:\Users\Michał\Documents\Projekt3\Projekt3_Andrzejewski48660\Projekt3_Andrzejewski48660\obj\Debug\Projekt3_Andrzejewski48660.csproj.GenerateResource.cache
+C:\Users\Michał\Documents\Projekt3\Projekt3_Andrzejewski48660\Projekt3_Andrzejewski48660\obj\Debug\Projekt3_Andrzejewski48660.csproj.CoreCompileInputs.cache
+C:\Users\Michał\Documents\Projekt3\Projekt3_Andrzejewski48660\Projekt3_Andrzejewski48660\obj\Debug\Projekt3_Andrzejewski48660.exe
+C:\Users\Michał\Documents\Projekt3\Projekt3_Andrzejewski48660\Projekt3_Andrzejewski48660\obj\Debug\Projekt3_Andrzejewski48660.pdb
+C:\Users\Michał\Documents\Projekt3\Projekt3_Andrzejewski48660\Projekt3_Andrzejewski48660\obj\Debug\Projekt3_Andrzejewski48660.csproj.ResolveComReference.cache
+C:\Users\Michał\Documents\Projekt3\Projekt3_Andrzejewski48660\Projekt3_Andrzejewski48660\obj\Debug\Projekt3_Andrzejewski48660.maForm1.resources
