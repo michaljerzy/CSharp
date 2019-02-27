@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PedLini", "PedLini\PedLini.csproj", "{97B6E7E4-16F6-4DE4-A82F-8388C1FEDA4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97B6E7E4-16F6-4DE4-A82F-8388C1FEDA4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B6E7E4-16F6-4DE4-A82F-8388C1FEDA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B6E7E4-16F6-4DE4-A82F-8388C1FEDA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B6E7E4-16F6-4DE4-A82F-8388C1FEDA4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1561FB6D-82C1-42AB-A3B3-65668EF6039D}
+	EndGlobalSection
+EndGlobal

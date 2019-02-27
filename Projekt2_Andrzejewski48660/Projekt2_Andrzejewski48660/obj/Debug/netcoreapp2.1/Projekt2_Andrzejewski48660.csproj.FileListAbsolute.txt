@@ -1,0 +1,11 @@
+C:\Users\Michał\Documents\Projekt2_Andrzejewski48660\Projekt2_Andrzejewski48660\bin\Debug\netcoreapp2.1\Projekt2_Andrzejewski48660.deps.json
+C:\Users\Michał\Documents\Projekt2_Andrzejewski48660\Projekt2_Andrzejewski48660\bin\Debug\netcoreapp2.1\Projekt2_Andrzejewski48660.runtimeconfig.json
+C:\Users\Michał\Documents\Projekt2_Andrzejewski48660\Projekt2_Andrzejewski48660\bin\Debug\netcoreapp2.1\Projekt2_Andrzejewski48660.runtimeconfig.dev.json
+C:\Users\Michał\Documents\Projekt2_Andrzejewski48660\Projekt2_Andrzejewski48660\bin\Debug\netcoreapp2.1\Projekt2_Andrzejewski48660.dll
+C:\Users\Michał\Documents\Projekt2_Andrzejewski48660\Projekt2_Andrzejewski48660\bin\Debug\netcoreapp2.1\Projekt2_Andrzejewski48660.pdb
+C:\Users\Michał\Documents\Projekt2_Andrzejewski48660\Projekt2_Andrzejewski48660\obj\Debug\netcoreapp2.1\Projekt2_Andrzejewski48660.csprojAssemblyReference.cache
+C:\Users\Michał\Documents\Projekt2_Andrzejewski48660\Projekt2_Andrzejewski48660\obj\Debug\netcoreapp2.1\Projekt2_Andrzejewski48660.csproj.CoreCompileInputs.cache
+C:\Users\Michał\Documents\Projekt2_Andrzejewski48660\Projekt2_Andrzejewski48660\obj\Debug\netcoreapp2.1\Projekt2_Andrzejewski48660.AssemblyInfoInputs.cache
+C:\Users\Michał\Documents\Projekt2_Andrzejewski48660\Projekt2_Andrzejewski48660\obj\Debug\netcoreapp2.1\Projekt2_Andrzejewski48660.AssemblyInfo.cs
+C:\Users\Michał\Documents\Projekt2_Andrzejewski48660\Projekt2_Andrzejewski48660\obj\Debug\netcoreapp2.1\Projekt2_Andrzejewski48660.dll
+C:\Users\Michał\Documents\Projekt2_Andrzejewski48660\Projekt2_Andrzejewski48660\obj\Debug\netcoreapp2.1\Projekt2_Andrzejewski48660.pdb
