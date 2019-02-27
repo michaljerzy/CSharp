@@ -32,6 +32,29 @@ namespace Andrzejewski_27_02_2019
             picBoxRysownica.Refresh();
         }
 
+        private void btnZatrzymaj_Click(object sender, EventArgs e)
+        {
+            //wyłączenie zegara
+            timer1.Enabled = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //wyłączenie zegara
+            timer1.Enabled = false;
+            //wymazanie wycieraczek
+            SzybaSamochodowa.Clear(Color.LightGreen);
+            // wyzwolenie zdarzenia paint dla kontrolki pictrebox 
+            picBoxRysownica.Refresh();
+        }
+
+        private void Andrzejewski_Load(object sender, EventArgs e)
+        {
+            // lokalizacja i ewentualnie zwymiarowanie kontrolek umieszczonych na formularzu
+            lblSuwak.Location = new Point(picBoxRysownica.Location.X + picBoxRysownica.Width + 10, picBoxRysownica.Location.Y);
+            lblSuwak.Location = new Point(lblSuwak.Location.X);
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             // obsługa "tikół" od zegarka
@@ -121,6 +144,8 @@ namespace Andrzejewski_27_02_2019
             Ys_1 = Ymax / 2 + Ymax / 4;
             Xs_2 = 3 * Xs_1;
             Ys_1 = Ys_2;
+            //wyznaczenie promienia okręgi po którym przemieszcza się ruchomy koniec wycieraczek
+            R = Ymax / 2 - Margines;
             //ustawienie kąta startu ruchu wycieraczek
             KątFi = StartFi;
             // ustalenie koloru wycieraczek
@@ -131,8 +156,6 @@ namespace Andrzejewski_27_02_2019
             Pióro.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             Pióro.StartCap = System.Drawing.Drawing2D.LineCap.RoundAnchor;
             Pióro.EndCap = System.Drawing.Drawing2D.LineCap.Round;
-
-
 
         }
     }

@@ -96,6 +96,7 @@
             this.btnZatrzymaj.TabIndex = 5;
             this.btnZatrzymaj.Text = "Zatrzymaj wycieraczki";
             this.btnZatrzymaj.UseVisualStyleBackColor = true;
+            this.btnZatrzymaj.Click += new System.EventHandler(this.btnZatrzymaj_Click);
             // 
             // button1
             // 
@@ -106,6 +107,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Wyłącz wycieraczki";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // timer1
             // 
@@ -125,6 +127,7 @@
             this.Controls.Add(this.picBoxRysownica);
             this.Name = "Andrzejewski";
             this.Text = "Wycieraczki samochodowe";
+            this.Load += new System.EventHandler(this.Andrzejewski_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRysownica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbSuwakPrędkości)).EndInit();
             this.ResumeLayout(false);
