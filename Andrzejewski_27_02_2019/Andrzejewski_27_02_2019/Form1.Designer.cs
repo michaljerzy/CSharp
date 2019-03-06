@@ -34,8 +34,8 @@
             this.lblSuwak = new System.Windows.Forms.Label();
             this.trbSuwakPrędkości = new System.Windows.Forms.TrackBar();
             this.btnWycieraczki = new System.Windows.Forms.Button();
-            this.btnZatrzymaj = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnZatrzymajWycieraczki = new System.Windows.Forms.Button();
+            this.btnWyłaczWycieraczki = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRysownica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbSuwakPrędkości)).BeginInit();
@@ -87,27 +87,27 @@
             this.btnWycieraczki.UseVisualStyleBackColor = true;
             this.btnWycieraczki.Click += new System.EventHandler(this.btnWycieraczki_Click);
             // 
-            // btnZatrzymaj
+            // btnZatrzymajWycieraczki
             // 
-            this.btnZatrzymaj.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnZatrzymaj.Location = new System.Drawing.Point(652, 196);
-            this.btnZatrzymaj.Name = "btnZatrzymaj";
-            this.btnZatrzymaj.Size = new System.Drawing.Size(99, 59);
-            this.btnZatrzymaj.TabIndex = 5;
-            this.btnZatrzymaj.Text = "Zatrzymaj wycieraczki";
-            this.btnZatrzymaj.UseVisualStyleBackColor = true;
-            this.btnZatrzymaj.Click += new System.EventHandler(this.btnZatrzymaj_Click);
+            this.btnZatrzymajWycieraczki.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnZatrzymajWycieraczki.Location = new System.Drawing.Point(652, 196);
+            this.btnZatrzymajWycieraczki.Name = "btnZatrzymajWycieraczki";
+            this.btnZatrzymajWycieraczki.Size = new System.Drawing.Size(99, 59);
+            this.btnZatrzymajWycieraczki.TabIndex = 5;
+            this.btnZatrzymajWycieraczki.Text = "Zatrzymaj wycieraczki";
+            this.btnZatrzymajWycieraczki.UseVisualStyleBackColor = true;
+            this.btnZatrzymajWycieraczki.Click += new System.EventHandler(this.btnZatrzymaj_Click);
             // 
-            // button1
+            // btnWyłaczWycieraczki
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(652, 271);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 59);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Wyłącz wycieraczki";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnWyłaczWycieraczki.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWyłaczWycieraczki.Location = new System.Drawing.Point(652, 271);
+            this.btnWyłaczWycieraczki.Name = "btnWyłaczWycieraczki";
+            this.btnWyłaczWycieraczki.Size = new System.Drawing.Size(99, 59);
+            this.btnWyłaczWycieraczki.TabIndex = 6;
+            this.btnWyłaczWycieraczki.Text = "Wyłącz wycieraczki";
+            this.btnWyłaczWycieraczki.UseVisualStyleBackColor = true;
+            this.btnWyłaczWycieraczki.Click += new System.EventHandler(this.button1_Click);
             // 
             // timer1
             // 
@@ -118,8 +118,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnZatrzymaj);
+            this.Controls.Add(this.btnWyłaczWycieraczki);
+            this.Controls.Add(this.btnZatrzymajWycieraczki);
             this.Controls.Add(this.btnWycieraczki);
             this.Controls.Add(this.trbSuwakPrędkości);
             this.Controls.Add(this.lblSuwak);
@@ -142,8 +142,8 @@
         private System.Windows.Forms.Label lblSuwak;
         private System.Windows.Forms.TrackBar trbSuwakPrędkości;
         private System.Windows.Forms.Button btnWycieraczki;
-        private System.Windows.Forms.Button btnZatrzymaj;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnZatrzymajWycieraczki;
+        private System.Windows.Forms.Button btnWyłaczWycieraczki;
         private System.Windows.Forms.Timer timer1;
     }
 }

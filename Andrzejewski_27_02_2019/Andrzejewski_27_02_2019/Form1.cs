@@ -50,9 +50,17 @@ namespace Andrzejewski_27_02_2019
 
         private void Andrzejewski_Load(object sender, EventArgs e)
         {
-            // lokalizacja i ewentualnie zwymiarowanie kontrolek umieszczonych na formularzu
-            lblSuwak.Location = new Point(picBoxRysownica.Location.X + picBoxRysownica.Width + 10, picBoxRysownica.Location.Y);
-            lblSuwak.Location = new Point(lblSuwak.Location.X);
+            //lokalizacja i ewentualnie zwymiarowanie kontrolek umieszczonych na formularzu
+            lblSuwak.Location = new Point(picBoxRysownica.Location.X +
+                picBoxRysownica.Width + 20, picBoxRysownica.Location.Y);
+            trbSuwakPrędkości.Location = new Point(lblSuwak.Location.X,
+                lblSuwak.Location.Y + lblSuwak.Height + 10);
+            btnWycieraczki.Location = new Point(trbSuwakPrędkości.Location.X,
+                trbSuwakPrędkości.Location.Y + trbSuwakPrędkości.Height + 10);
+            btnZatrzymajWycieraczki.Location = new Point(btnWycieraczki.Location.X,
+                btnWycieraczki.Location.Y + btnWycieraczki.Height + 10);
+            btnWyłaczWycieraczki.Location = new Point(btnZatrzymajWycieraczki.Location.X,
+                btnZatrzymajWycieraczki.Location.Y + btnZatrzymajWycieraczki.Height + 10);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -70,7 +78,7 @@ namespace Andrzejewski_27_02_2019
                 }
                 else
                 {
-                    if(KątFi > KoniecFi)
+                    if(KątFi > StartFi)
                     {
                         //zmiana kierunku ruchu wycieraczek
                         KierunekWprawo = true;
@@ -83,36 +91,43 @@ namespace Andrzejewski_27_02_2019
             }
         }
 
-        private void picBoxRysownica_Paint(object sender, PaintEventArgs e)
-        {
-            //wymazanie starego położenia wycieraczki
-            SzybaSamochodowa.Clear(Color.LightGreen);
-            //sprawdzenie kieruunku ruchu wycieraczki
-            if (KierunekWprawo)
-                KątFi = KątFi - PrzyrostKataFi;
-            else
-                KątFi = KątFi + PrzyrostKataFi;
-
-            // przeliczenie kąta Fi na radiany
-            Fi_Radiant = (float)(KątFi * Math.PI / 180);
-            // wyznaczenie współrzędnych "końca" wycieraczki z okręgu
-            Xo = (float)(Xs_1 + R * Math.Cos(Fi_Radiant));
-            Yo = (float)(Ys_1 - R * Math.Cos(Fi_Radiant));
-            //wykreślenie 1 wycieraczki w nowym położeniu
-            SzybaSamochodowa.DrawLine(Pióro, Xs_1, Ys_1, Xo, Yo);
-            //wyznaczenie współrzędnych końca drugiej wycieraczki
-            Xo = (float)(Xs_2 + R * Math.Cos(Fi_Radiant));
-            Yo = (float)(Ys_2 - R * Math.Cos(Fi_Radiant));
-            //wykreślenie 1 wycieraczki w nowym położeniu
-            SzybaSamochodowa.DrawLine(Pióro, Xs_2, Ys_2, Xo, Yo);
-        }
-        
         // uchwyty wycieraczek 
         float Xs_1, Ys_1, Xs_2, Ys_2;
         //kolory wycieraczek
         Color KolorRuchWprawo, KolorRuchWlewo;
         // deklaracja pióra
         Pen Pióro;
+
+        private void picBoxRysownica_Paint(object sender, PaintEventArgs e)
+        {
+            //wymazanie starego położenia wycieraczki
+            SzybaSamochodowa.Clear(Color.LightGreen);
+            //sprawdzenie kieruunku ruchu wycieraczki
+            if (KierunekWprawo)
+            {
+                KątFi = KątFi - PrzyrostKataFi;
+            }
+            else
+            {
+                KątFi = KątFi + PrzyrostKataFi;
+            }
+
+            // przeliczenie kąta Fi na radiany
+            Fi_Radiant = (float)(KątFi * Math.PI / 180);
+            // wyznaczenie współrzędnych "końca" wycieraczki z okręgu
+            Xo = (float)(Xs_1 + R * Math.Cos(Fi_Radiant));
+            Yo = (float)(Ys_1 - R * Math.Sin(Fi_Radiant));
+            //wykreślenie 1 wycieraczki w nowym położeniu
+            SzybaSamochodowa.DrawLine(Pióro, Xs_1, Ys_1, Xo, Yo);
+            //wyznaczenie współrzędnych końca drugiej wycieraczki
+            Xo = (float)(Xs_2 + R * Math.Cos(Fi_Radiant));
+            Yo = (float)(Ys_2 - R * Math.Sin(Fi_Radiant));
+            //wykreślenie 1 wycieraczki w nowym położeniu
+            SzybaSamochodowa.DrawLine(Pióro, Xs_2, Ys_2, Xo, Yo);
+        }
+
+        
+
         public Andrzejewski()
         {
             InitializeComponent();
