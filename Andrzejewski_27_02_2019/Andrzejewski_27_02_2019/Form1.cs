@@ -63,6 +63,11 @@ namespace Andrzejewski_27_02_2019
                 btnZatrzymajWycieraczki.Location.Y + btnZatrzymajWycieraczki.Height + 10);
         }
 
+        private void picBoxRysownica_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             // obsługa "tikół" od zegarka

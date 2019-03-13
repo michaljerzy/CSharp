@@ -48,6 +48,7 @@
             this.picBoxRysownica.Size = new System.Drawing.Size(594, 337);
             this.picBoxRysownica.TabIndex = 0;
             this.picBoxRysownica.TabStop = false;
+            this.picBoxRysownica.Click += new System.EventHandler(this.picBoxRysownica_Click);
             this.picBoxRysownica.Paint += new System.Windows.Forms.PaintEventHandler(this.picBoxRysownica_Paint);
             // 
             // dateTimePicker1

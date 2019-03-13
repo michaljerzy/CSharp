@@ -1,4 +1,4 @@
-﻿namespace _06_03_2019_Andrzejewski
+﻿namespace Projekt1_2_Andrzejewski_48660
 {
     partial class Andrzejewski
     {
@@ -29,22 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(470, 300);
+            this.pictureBox1.Size = new System.Drawing.Size(380, 296);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             // 
             // Andrzejewski
             // 
@@ -53,9 +50,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Andrzejewski";
-            this.Text = "Animacja ruchu kulki SIN i COS";
-            this.Load += new System.EventHandler(this.Andrzejewski_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Andrzejewski_Paint);
+            this.Text = "Projekt1_Andrzejewski_48660";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -63,8 +58,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

@@ -14,8 +14,8 @@ namespace _06_03_2019_Andrzejewski
     public partial class Andrzejewski : Form
     {
         // Deklaracja stałych
-        const int Margines = 10;
-        const int PromieńKulki = 20;
+        const int Margines = 20;
+        const int PromieńKulki = 10;
         //deklaracja zmiennych referencyjnych do obiektów graficznych
         Graphics Rysownica;
         Pen PioroXY, PioroSIN, PioroCOS;
@@ -47,7 +47,7 @@ namespace _06_03_2019_Andrzejewski
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (IndexPołożeniaKulek < PunktWjednostkachMiasryOsiX)
-                IndexPołożeniaKulek ++;
+                IndexPołożeniaKulek++;
             else
                 IndexPołożeniaKulek = 0;
             //odświerzenie powierzchni graficznej
@@ -65,7 +65,7 @@ namespace _06_03_2019_Andrzejewski
             InitializeComponent();
             // lokalizacja i zwymiraowanie formularza
             this.Location = new Point(10, 10);
-            this.Width = (int)(Screen.PrimaryScreen.Bounds.Width * 0.75F);
+            this.Width = (int)(Screen.PrimaryScreen.Bounds.Width * 0.85F);
             this.Height = (int)(Screen.PrimaryScreen.Bounds.Height * 0.75F);
             this.StartPosition = FormStartPosition.Manual;
             //Utworzenie egzemplarza powierzchni graficznej
@@ -109,7 +109,7 @@ namespace _06_03_2019_Andrzejewski
                 //wyznaczenie współrzędnych dla kolejnego puntktu toru linii SIN oraz COS
                 PunktyNaTorzeLiniiSIN[IndexPunktowOsiX] =
                 new Point((int)Fi, Ys - (int)(WspolczynnikSkaliDlaOsiY * Math.Sin(Fi_w_Radianach)));
-                PunktyNaTorzeLiniiSIN[IndexPunktowOsiX] =
+                PunktyNaTorzeLiniiCOS[IndexPunktowOsiX] =
                 new Point((int)Fi, Ys + (int)(WspolczynnikSkaliDlaOsiY * Math.Cos(Fi_w_Radianach)));
                 // zwiększamy index punktu na linii toru
                 IndexPunktowOsiX++;
