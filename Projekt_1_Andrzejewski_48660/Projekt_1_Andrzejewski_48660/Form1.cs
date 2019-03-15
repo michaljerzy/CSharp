@@ -13,28 +13,29 @@ namespace Projekt_1_Andrzejewski_48660
 {
     public partial class Andrzejewski : Form
     {
-        int maIndexPołożeniaKulek = 0;
-        int maPromieńKulki = 10;
-        Brush maKolorKulki = Brushes.White;
+        float maIndexPołożeniaKulek = 0.0F;
+        int maPromieńKulki = 5;
+        Brush maKolorKulki = Brushes.LightGray;
         Graphics maWykresOsi;
         Pen maPióro;
         Pen maPióro2;
         float maXmax, maYmax;
-        Color maKolorLinii = Color.White;
-        Color maKolorOsi = Color.White;
+        // Color myResult = Color.AliceBlue;
+        Brush maKolorLinii = Brushes.LightGray;
         DashStyle maStylLiniOsi = DashStyle.Solid;
         float maGrubośćPióra2 = 3F;
         PointF[] maPunktyWykresu = new PointF[199];
-        float maGrubośćOsi = 1F;
+        float maGrubośćOsi = 2F;
+
+        internal static FormKolor form2 = new FormKolor();
 
         public Andrzejewski()
         {
             InitializeComponent();
-            BackColor = Color.FromArgb(0,0,0);
             //lokalizacja i zwymiarowanie formularza
             Location = new Point(20, 20);
-            Width = (int)(Screen.PrimaryScreen.Bounds.Height * 1.5);
-            Height = (int)(Screen.PrimaryScreen.Bounds.Height * 0.8);
+            Width = (int)(Screen.PrimaryScreen.Bounds.Height * 1.6);
+            Height = (int)(Screen.PrimaryScreen.Bounds.Height * 1.2);
             StartPosition = FormStartPosition.Manual;
             //zablokowanie zmiany rozmiarów formularza
             SetAutoSizeMode(AutoSizeMode.GrowAndShrink);
@@ -43,7 +44,7 @@ namespace Projekt_1_Andrzejewski_48660
             maPicBox.Width = (int)(Width * 0.7F);
             maPicBox.Height = (int)(Height * 0.8F);
             //ustawienie koloru tła
-            maPicBox.BackColor = mabutKolorTła.BackColor;
+            //maPicBox.BackColor = mabutKolorTła.BackColor;
             //utworzenie bitmapy
             maPicBox.Image = new Bitmap(maPicBox.Width, maPicBox.Height);
             //utworzenie egzemplarza powierzchni graficznej na bit mapie
@@ -72,7 +73,7 @@ namespace Projekt_1_Andrzejewski_48660
             //utworzenie egzemplarza pióra
             maPióro = new Pen(maKolorLinii, maGrubośćOsi);
             //ustawienie atrybutów pióra
-            maPióro.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            maPióro.DashStyle = DashStyle.Dash;
             //ustawienie zakończeń linii osi układu współrzędnych
             maPióro.StartCap = LineCap.ArrowAnchor;
             //ustawienie osi układu współrzędnych
@@ -90,12 +91,13 @@ namespace Projekt_1_Andrzejewski_48660
                 maj += 0.01f;
             }
             //wykreślenie kulek na torze 
-            maWykresOsi.FillEllipse(maKolorKulki, maPunktyWykresu[maIndexPołożeniaKulek].X - 10,
-                maPunktyWykresu[maIndexPołożeniaKulek].Y - maPromieńKulki, 2 * maPromieńKulki, 2 * maPromieńKulki);
+            maWykresOsi.FillEllipse(maKolorKulki, maPunktyWykresu[(int)maIndexPołożeniaKulek].X - 10,
+                maPunktyWykresu[(int)maIndexPołożeniaKulek].Y - maPromieńKulki, 2 * maPromieńKulki, 2 * maPromieńKulki);
         }
 
         private void maRysujBut_Click(object sender, EventArgs e)
         {
+            mapictureBox1.Visible = false;
             timer1.Enabled = true;
             float maj = -1;
             for (int mai = 0; mai < 199; mai++)
@@ -122,16 +124,17 @@ namespace Projekt_1_Andrzejewski_48660
         {
             if (maIndexPołożeniaKulek < 185)
             {
-                maIndexPołożeniaKulek += 1;
+
+                maIndexPołożeniaKulek += 3;
                 //zamalowanie tła kolorem tła w celu usunięcia śladów "Pena"
-                maWykresOsi.Clear(mabutKolorTła.BackColor);
+                maWykresOsi.Clear(matbZaciemnienie.BackColor);
             }
             else //dodano aby obiekt poruszający się zwolnił pod konie wykresu (inaczej zbyt mocno przyszpiesza)
                 if (maIndexPołożeniaKulek < 195)
             {
                 maIndexPołożeniaKulek += 1;
                 //zamalowanie tła kolorem tła w celu usunięcia śladów "Pena"
-                maWykresOsi.Clear(mabutKolorTła.BackColor);
+                maWykresOsi.Clear(matbZaciemnienie.BackColor);
             }
             else
                 maIndexPołożeniaKulek = 0;
@@ -141,7 +144,9 @@ namespace Projekt_1_Andrzejewski_48660
 
         private void matbSzybkoscKulki_Scroll(object sender, EventArgs e)
         {
-            matbSzybkoscKulki.Text = Convert.ToString(matbSzybkoscKulki.Value);
+            maTBPredkosc.Text = Convert.ToString(matbSzybkoscKulki.Value);
+            timer1.Interval = 200 - 3 * matbSzybkoscKulki.Value;
+            Refresh();
         }
 
         private void mabutStop_Click(object sender, EventArgs e)
@@ -156,9 +161,7 @@ namespace Projekt_1_Andrzejewski_48660
 
         private void maTBPredkosc_TextChanged(object sender, EventArgs e)
         {
-            maTBPredkosc.Text = Convert.ToString(matbSzybkoscKulki.Value);
-            //odwrócenie aby im większa była liczba tym większa prędkość
-            timer1.Interval = 2001 - matbSzybkoscKulki.Value;
+            
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -170,6 +173,8 @@ namespace Projekt_1_Andrzejewski_48660
         {
             macolorDialog1.ShowDialog();
             maPicBox.BackColor = macolorDialog1.Color;
+            //Refresh();
+
         }
         string kolor;
         private void button1_Click(object sender, EventArgs e)
@@ -177,12 +182,95 @@ namespace Projekt_1_Andrzejewski_48660
             
         }
 
-        private void mabutKolorLinii_Click(object sender, EventArgs e)
+        public void mabutKolorLinii_Click(object sender, EventArgs e)
         {
             macolorDialog1.ShowDialog();
-            BackColor = macolorDialog1.Color;
-            maKolorLinii = mabutKolorLinii.BackColor;
-            Refresh();
+            maKolorLinii = new SolidBrush(macolorDialog1.Color);
+            //Refresh();
+        }
+
+        private void butCzerwony_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+
+        public void butkolory_Click(object sender, EventArgs e)
+        {
+            macolorDialog1.ShowDialog();
+            maKolorKulki = new SolidBrush(macolorDialog1.Color); 
+        }
+
+        private void matbZaciemnienie_Scroll(object sender, EventArgs e)
+        {
+            if (matbZaciemnienie.Value == 8)
+            {
+                BackColor = Color.FromArgb(62, 65, 65);
+            }
+            if (matbZaciemnienie.Value == 7)
+            {
+                BackColor = Color.FromArgb(82, 85, 85);
+            }
+            if (matbZaciemnienie.Value == 6)
+            {
+                BackColor = Color.FromArgb(102, 105, 105);
+            }
+            if (matbZaciemnienie.Value == 5)
+            {
+                BackColor = Color.FromArgb(122, 125, 125);
+            }
+            if (matbZaciemnienie.Value == 4)
+            {
+                BackColor = Color.FromArgb(152, 155, 155);
+            }
+            if (matbZaciemnienie.Value == 3)
+            {
+                BackColor = Color.FromArgb(172, 175, 175);
+            }
+            if (matbZaciemnienie.Value == 2)
+            {
+                BackColor = Color.FromArgb(192, 195, 195);
+            }
+            if (matbZaciemnienie.Value == 1)
+            {
+                BackColor = Color.FromArgb(212, 215, 215);
+            }
+            if (matbZaciemnienie.Value == 0)
+            {
+                BackColor = Color.FromArgb(232, 235, 235);
+            }
+        }
+
+        private void matbGruboscKulki_Scroll(object sender, EventArgs e)
+        {
+            //matbGruboscKulki2.Value = maPromieńKulki;
+            
+        }
+
+        private void maTBWielkoscKulki_Scroll(object sender, EventArgs e)
+        {
+            if(maTBWielkoscKulki.Value == 5)
+                maPromieńKulki = 5;
+            if (maTBWielkoscKulki.Value == 6)
+                maPromieńKulki = 6;
+            if (maTBWielkoscKulki.Value == 7)
+                maPromieńKulki = 7;
+            if (maTBWielkoscKulki.Value == 8)
+                maPromieńKulki = 8;
+            if (maTBWielkoscKulki.Value == 9)
+                maPromieńKulki = 9;
+            if (maTBWielkoscKulki.Value == 10)
+                maPromieńKulki = 10;
+            if (maTBWielkoscKulki.Value == 11)
+                maPromieńKulki = 11;
+            if (maTBWielkoscKulki.Value == 12)
+                maPromieńKulki = 12;
+            if (maTBWielkoscKulki.Value == 13)
+                maPromieńKulki = 13;
+            if (maTBWielkoscKulki.Value == 14)
+                maPromieńKulki = 14;
+            if (maTBWielkoscKulki.Value == 15)
+                maPromieńKulki = 15;
         }
 
         private void Andrzejewski_Load(object sender, EventArgs e)
@@ -190,12 +278,15 @@ namespace Projekt_1_Andrzejewski_48660
             //zlokalizowanie kontrolek
             maRysujBut.Location = new Point(maRysujBut.Location.X + (int)(Height * 0.5), maRysujBut.Location.Y + (int)(Height * 0.04));
             matbSzybkoscKulki.Location = new Point(maRysujBut.Location.X ,maRysujBut.Location.Y + (int)(Height * 0.2));
-            malblPredkosc.Location = new Point(matbSzybkoscKulki.Location.X + (int)(Height * 0.05), matbSzybkoscKulki.Location.Y - (int)(Height * 0.02));
+            malblPredkosc.Location = new Point(matbSzybkoscKulki.Location.X + (int)(Height * 0.02), matbSzybkoscKulki.Location.Y - (int)(Height * 0.02));
             maTBPredkosc.Location = new Point(matbSzybkoscKulki.Location.X, matbSzybkoscKulki.Location.Y + (int)(Height * 0.08));
             mabutStop.Location = new Point(maTBPredkosc.Location.X, maTBPredkosc.Location.Y + (int)(Height * 0.08));
-            maCMBKoloryKulki.Location = new Point(mabutStop.Location.X, mabutStop.Location.Y + (int)(Height * 0.14));
-            mabutKolorTła.Location = new Point(maCMBKoloryKulki.Location.X, maCMBKoloryKulki.Location.Y + (int)(Height * 0.07));
-            mabutKolorLinii.Location = new Point(mabutKolorTła.Location.X, mabutKolorTła.Location.Y + (int)(Height * 0.07));
+            mabutKolorLinii.Location = new Point(mabutStop.Location.X, mabutStop.Location.Y + (int)(Height * 0.09));
+            butkolory.Location = new Point(maRysujBut.Location.X, maRysujBut.Location.Y + (int)(Height * 0.09));
+            matbZaciemnienie.Location = new Point(maPicBox.Location.X, maPicBox.Location.Y + (int)(Height * 0.01));
+            malblJasnosc.Location = new Point(matbZaciemnienie.Location.X + (int)(Height * 0.03), matbZaciemnienie.Location.Y + (int)(Height * 0.05));
+            lblGruboscKulki.Location = new Point(mabutKolorLinii.Location.X + (int)(Height * 0.02), mabutKolorLinii.Location.Y + (int)(Height * 0.09));
+            
         }
     }
 }

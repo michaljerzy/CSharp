@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Andrzejewski));
             this.maPicBox = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.maRysujBut = new System.Windows.Forms.Button();
@@ -36,12 +37,19 @@
             this.malblPredkosc = new System.Windows.Forms.Label();
             this.mabutStop = new System.Windows.Forms.Button();
             this.maTBPredkosc = new System.Windows.Forms.TextBox();
-            this.maCMBKoloryKulki = new System.Windows.Forms.ComboBox();
-            this.mabutKolorTła = new System.Windows.Forms.Button();
             this.macolorDialog1 = new System.Windows.Forms.ColorDialog();
             this.mabutKolorLinii = new System.Windows.Forms.Button();
+            this.butkolory = new System.Windows.Forms.Button();
+            this.matbZaciemnienie = new System.Windows.Forms.TrackBar();
+            this.malblJasnosc = new System.Windows.Forms.Label();
+            this.mapictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblGruboscKulki = new System.Windows.Forms.Label();
+            this.maTBWielkoscKulki = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.maPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matbSzybkoscKulki)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matbZaciemnienie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mapictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maTBWielkoscKulki)).BeginInit();
             this.SuspendLayout();
             // 
             // maPicBox
@@ -58,6 +66,7 @@
             // 
             // maRysujBut
             // 
+            this.maRysujBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.maRysujBut.Location = new System.Drawing.Point(645, 37);
             this.maRysujBut.Name = "maRysujBut";
             this.maRysujBut.Size = new System.Drawing.Size(143, 67);
@@ -69,22 +78,26 @@
             // matbSzybkoscKulki
             // 
             this.matbSzybkoscKulki.Location = new System.Drawing.Point(645, 141);
+            this.matbSzybkoscKulki.Minimum = 1;
             this.matbSzybkoscKulki.Name = "matbSzybkoscKulki";
             this.matbSzybkoscKulki.Size = new System.Drawing.Size(143, 45);
             this.matbSzybkoscKulki.TabIndex = 2;
+            this.matbSzybkoscKulki.Value = 1;
             this.matbSzybkoscKulki.Scroll += new System.EventHandler(this.matbSzybkoscKulki_Scroll);
             // 
             // malblPredkosc
             // 
             this.malblPredkosc.AutoSize = true;
+            this.malblPredkosc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.malblPredkosc.Location = new System.Drawing.Point(711, 125);
             this.malblPredkosc.Name = "malblPredkosc";
-            this.malblPredkosc.Size = new System.Drawing.Size(77, 13);
+            this.malblPredkosc.Size = new System.Drawing.Size(120, 18);
             this.malblPredkosc.TabIndex = 3;
             this.malblPredkosc.Text = "Prędkość kulki";
             // 
             // mabutStop
             // 
+            this.mabutStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.mabutStop.Location = new System.Drawing.Point(645, 218);
             this.mabutStop.Name = "mabutStop";
             this.mabutStop.Size = new System.Drawing.Size(143, 67);
@@ -101,35 +114,9 @@
             this.maTBPredkosc.TabIndex = 6;
             this.maTBPredkosc.TextChanged += new System.EventHandler(this.maTBPredkosc_TextChanged);
             // 
-            // maCMBKoloryKulki
-            // 
-            this.maCMBKoloryKulki.FormattingEnabled = true;
-            this.maCMBKoloryKulki.Items.AddRange(new object[] {
-            "Czerwony",
-            "Biały",
-            "Niebieski",
-            "Zielony",
-            "Pomarańczowy",
-            "Różowy",
-            "Fioletowy"});
-            this.maCMBKoloryKulki.Location = new System.Drawing.Point(645, 291);
-            this.maCMBKoloryKulki.Name = "maCMBKoloryKulki";
-            this.maCMBKoloryKulki.Size = new System.Drawing.Size(143, 21);
-            this.maCMBKoloryKulki.TabIndex = 7;
-            this.maCMBKoloryKulki.Text = "Wybierz kolor kulki";
-            // 
-            // mabutKolorTła
-            // 
-            this.mabutKolorTła.Location = new System.Drawing.Point(645, 318);
-            this.mabutKolorTła.Name = "mabutKolorTła";
-            this.mabutKolorTła.Size = new System.Drawing.Size(143, 62);
-            this.mabutKolorTła.TabIndex = 8;
-            this.mabutKolorTła.Text = "Kolor Tła";
-            this.mabutKolorTła.UseVisualStyleBackColor = true;
-            this.mabutKolorTła.Click += new System.EventHandler(this.mabutKolorTła_Click);
-            // 
             // mabutKolorLinii
             // 
+            this.mabutKolorLinii.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.mabutKolorLinii.Location = new System.Drawing.Point(645, 386);
             this.mabutKolorLinii.Name = "mabutKolorLinii";
             this.mabutKolorLinii.Size = new System.Drawing.Size(143, 66);
@@ -138,14 +125,79 @@
             this.mabutKolorLinii.UseVisualStyleBackColor = true;
             this.mabutKolorLinii.Click += new System.EventHandler(this.mabutKolorLinii_Click);
             // 
+            // butkolory
+            // 
+            this.butkolory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.butkolory.Location = new System.Drawing.Point(794, 37);
+            this.butkolory.Name = "butkolory";
+            this.butkolory.Size = new System.Drawing.Size(143, 67);
+            this.butkolory.TabIndex = 10;
+            this.butkolory.Text = "Kolory kulki";
+            this.butkolory.UseVisualStyleBackColor = true;
+            this.butkolory.Click += new System.EventHandler(this.butkolory_Click);
+            // 
+            // matbZaciemnienie
+            // 
+            this.matbZaciemnienie.Location = new System.Drawing.Point(12, 59);
+            this.matbZaciemnienie.Maximum = 8;
+            this.matbZaciemnienie.Name = "matbZaciemnienie";
+            this.matbZaciemnienie.Size = new System.Drawing.Size(392, 45);
+            this.matbZaciemnienie.TabIndex = 11;
+            this.matbZaciemnienie.Scroll += new System.EventHandler(this.matbZaciemnienie_Scroll);
+            // 
+            // malblJasnosc
+            // 
+            this.malblJasnosc.AutoSize = true;
+            this.malblJasnosc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.malblJasnosc.Location = new System.Drawing.Point(30, 12);
+            this.malblJasnosc.Name = "malblJasnosc";
+            this.malblJasnosc.Size = new System.Drawing.Size(278, 24);
+            this.malblJasnosc.TabIndex = 12;
+            this.malblJasnosc.Text = "Poziom zaciemnienia ekranu";
+            // 
+            // mapictureBox1
+            // 
+            this.mapictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("mapictureBox1.Image")));
+            this.mapictureBox1.Location = new System.Drawing.Point(100, 200);
+            this.mapictureBox1.Name = "mapictureBox1";
+            this.mapictureBox1.Size = new System.Drawing.Size(296, 111);
+            this.mapictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.mapictureBox1.TabIndex = 45;
+            this.mapictureBox1.TabStop = false;
+            // 
+            // lblGruboscKulki
+            // 
+            this.lblGruboscKulki.AutoSize = true;
+            this.lblGruboscKulki.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblGruboscKulki.Location = new System.Drawing.Point(847, 125);
+            this.lblGruboscKulki.Name = "lblGruboscKulki";
+            this.lblGruboscKulki.Size = new System.Drawing.Size(113, 18);
+            this.lblGruboscKulki.TabIndex = 47;
+            this.lblGruboscKulki.Text = "Grubość kulki";
+            // 
+            // maTBWielkoscKulki
+            // 
+            this.maTBWielkoscKulki.Location = new System.Drawing.Point(928, 514);
+            this.maTBWielkoscKulki.Maximum = 15;
+            this.maTBWielkoscKulki.Minimum = 5;
+            this.maTBWielkoscKulki.Name = "maTBWielkoscKulki";
+            this.maTBWielkoscKulki.Size = new System.Drawing.Size(104, 45);
+            this.maTBWielkoscKulki.TabIndex = 48;
+            this.maTBWielkoscKulki.Value = 5;
+            this.maTBWielkoscKulki.Scroll += new System.EventHandler(this.maTBWielkoscKulki_Scroll);
+            // 
             // Andrzejewski
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1034, 561);
+            this.Controls.Add(this.maTBWielkoscKulki);
+            this.Controls.Add(this.lblGruboscKulki);
+            this.Controls.Add(this.mapictureBox1);
+            this.Controls.Add(this.malblJasnosc);
+            this.Controls.Add(this.matbZaciemnienie);
+            this.Controls.Add(this.butkolory);
             this.Controls.Add(this.mabutKolorLinii);
-            this.Controls.Add(this.mabutKolorTła);
-            this.Controls.Add(this.maCMBKoloryKulki);
             this.Controls.Add(this.maTBPredkosc);
             this.Controls.Add(this.mabutStop);
             this.Controls.Add(this.malblPredkosc);
@@ -158,6 +210,9 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Andrzejewski_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.maPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matbSzybkoscKulki)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matbZaciemnienie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mapictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maTBWielkoscKulki)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,10 +227,14 @@
         private System.Windows.Forms.Label malblPredkosc;
         private System.Windows.Forms.Button mabutStop;
         private System.Windows.Forms.TextBox maTBPredkosc;
-        private System.Windows.Forms.ComboBox maCMBKoloryKulki;
-        private System.Windows.Forms.Button mabutKolorTła;
         private System.Windows.Forms.ColorDialog macolorDialog1;
         private System.Windows.Forms.Button mabutKolorLinii;
+        private System.Windows.Forms.Button butkolory;
+        private System.Windows.Forms.TrackBar matbZaciemnienie;
+        private System.Windows.Forms.Label malblJasnosc;
+        private System.Windows.Forms.PictureBox mapictureBox1;
+        private System.Windows.Forms.Label lblGruboscKulki;
+        private System.Windows.Forms.TrackBar maTBWielkoscKulki;
     }
 }
 
