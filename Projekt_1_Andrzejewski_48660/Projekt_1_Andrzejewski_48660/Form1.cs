@@ -14,12 +14,15 @@ namespace Projekt_1_Andrzejewski_48660
     public partial class Andrzejewski : Form
     {
         //deklaracja zmiennych
+
         float maIndexPołożeniaKulek = 0.0F;
         int maPromieńKulki = 5;
         Brush maKolorKulki = Brushes.LightGray;
         Graphics maWykresOsi;
+        Graphics chuj;
         Pen maPióro;
         Pen maPióro2;
+        Pen PenChuj;
         float maXmax, maYmax;
         Brush maKolorLinii = Brushes.LightGray;
         Font maCzcionka = new Font("Times New Roman", 10, FontStyle.Bold);
@@ -44,7 +47,10 @@ namespace Projekt_1_Andrzejewski_48660
             //lokalizacja i zwymiarowanie kontrolki PictureBox
             maPicBox.Location = new Point(Left + 10, Top + 30);
             maPicBox.Width = (int)(Width * 0.7F);
-            maPicBox.Height = (int)(Height * 0.8F);         
+            maPicBox.Height = (int)(Height * 0.8F);
+            pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            chuj = Graphics.FromImage(pictureBox1.Image);
+            
             //utworzenie bitmapy
             maPicBox.Image = new Bitmap(maPicBox.Width, maPicBox.Height);
             //utworzenie egzemplarza powierzchni graficznej na bit mapie
@@ -84,16 +90,21 @@ namespace Projekt_1_Andrzejewski_48660
             //ustawienie atrybutów dla pióra2
             maPióro2.DashStyle = maStylLiniWykresu;
             //obliczenie oraz wyznaczenie punktów wykrresu
+
+            //PenChuj = new Pen();
+            
             float maj = -1;
             for (int mai = 0; mai < 199; mai++)
             {
                 if (maj > -1 && mai % 5 == 0)
-                    maWykresOsi.DrawLine(maPióro2, maPunktyWykresu[mai - 5], maPunktyWykresu[mai]);
+                    chuj.DrawImage(chuj, maPunktyWykresu[mai - 5], maPunktyWykresu[mai]);
                 maj += 0.01f;
             }
             //wykreślenie kulek na torze 
-            maWykresOsi.FillEllipse(maKolorKulki, maPunktyWykresu[(int)maIndexPołożeniaKulek].X - 10,
-                maPunktyWykresu[(int)maIndexPołożeniaKulek].Y - maPromieńKulki, 2 * maPromieńKulki, 2 * maPromieńKulki);
+            //maWykresOsi.FillEllipse(maKolorKulki, maPunktyWykresu[(int)maIndexPołożeniaKulek].X - 10,
+               // maPunktyWykresu[(int)maIndexPołożeniaKulek].Y - maPromieńKulki, 2 * maPromieńKulki, 2 * maPromieńKulki);
+              //chuj.DrawImage(chuj, maPunktyWykresu[(int)maIndexPołożeniaKulek].X - 10);
+              
 
             SolidBrush maXiY = new SolidBrush(Color.Black);
             //określenie rozmiaru powierzchni dla opisu osi Y
@@ -362,6 +373,11 @@ namespace Projekt_1_Andrzejewski_48660
             
             FontDialog maOknoWyboruCzcionki = new FontDialog(); //deklaruje zmienną czcionki 
             maOknoWyboruCzcionki.ShowDialog();  //otwiera okno z formatowaniem czcionek
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void Andrzejewski_Load(object sender, EventArgs e)

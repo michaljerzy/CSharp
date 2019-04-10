@@ -101,14 +101,17 @@ namespace _06_03_2019_Andrzejewski
             IndexPołożeniaKulek = 0;
             int PrzrostZmianX = (Xmax - 2 * Margines) / PunktWjednostkachMiasryOsiX;
             int IndexPunktowOsiX;
+            int maj = -1;
+            float maY;
             // wyznaczenie współrzędnych linii toru
             for (Fi = Xs - PunktWjednostkachMiasryOsiX / 2 + Margines, IndexPunktowOsiX = 0; 
                 IndexPunktowOsiX <= PunktWjednostkachMiasryOsiX; Fi = Fi + PrzrostZmianX)
             {//przeliczenie kąta Fi na Radiany
+                maY = (float)(Math.PI * Math.Pow(maj, 5) - (Math.Pow(maj + Math.PI, 1 / 2)));
                 Fi_w_Radianach = (float)((Fi * Math.PI) / 180F);
                 //wyznaczenie współrzędnych dla kolejnego puntktu toru linii SIN oraz COS
                 PunktyNaTorzeLiniiSIN[IndexPunktowOsiX] =
-                new Point((int)Fi, Ys - (int)(WspolczynnikSkaliDlaOsiY * Math.Sin(Fi_w_Radianach)));
+                new Point((int)Fi, Ys - (int)(WspolczynnikSkaliDlaOsiY * maY));
                 PunktyNaTorzeLiniiCOS[IndexPunktowOsiX] =
                 new Point((int)Fi, Ys + (int)(WspolczynnikSkaliDlaOsiY * Math.Cos(Fi_w_Radianach)));
                 // zwiększamy index punktu na linii toru
