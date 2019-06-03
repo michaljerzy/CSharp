@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+using static Andrzejewsk_10_04_19.Form1;
 
 namespace Andrzejewsk_10_04_19
 {
@@ -12,7 +14,7 @@ namespace Andrzejewsk_10_04_19
     {
         public enum Typbryły
         {
-            BG_Walec, BG_WalecPochyły, BG_Stożek, BG_StożekPochyły, BG_Graniastosłup, BG_GraniastosłupPochyły
+            BG_Walec, BG_WalecPochyły, BG_Stożek, BG_StożekPochyły, BG_Graniastosłup, BG_GraniastosłupPochyły, BG_Ostrosłup
         };
 
         public Typbryły RodzajBryły;
@@ -78,6 +80,33 @@ namespace Andrzejewsk_10_04_19
         public void KierunekWPrawo()
         {
             this.KierunekObrotu = false;
+        }
+        public int CompareTo(bryłaAbstrakcyjna bryła)
+        {
+            if(Form1.UchwytFormularza.rbPromieńPodstawy.Checked)
+            {
+                if (this.Promień > bryła.Promień) return 1;
+                else if (this.Promień < bryła.Promień) return -1;
+                else return 0;
+            }
+            else if (Form1.UchwytFormularza.rbWysokość.Checked)
+            {
+                if (this.WysokośćBryły > bryła.WysokośćBryły) return 1;
+                else if (this.WysokośćBryły < bryła.WysokośćBryły) return - 1;
+                else return 0;
+            }
+            else if (Form1.UchwytFormularza.rbPolePowierzchni.Checked)
+            {
+                if (this.PowierzchniaBryły > bryła.PowierzchniaBryły) return 1;
+                else if (this.PowierzchniaBryły < bryła.PowierzchniaBryły) return - 1;
+                else return 0;
+            }
+            else if (Form1.UchwytFormularza.rbObjętość.Checked)
+            {
+                if (this.ObjętośćBryły > bryła.ObjętośćBryły) return 1;
+                else if (this.ObjętośćBryły < bryła.ObjętośćBryły) return -1;
+                else return 0;
+            }
         }
     }
 }

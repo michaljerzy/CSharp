@@ -38,6 +38,8 @@
             this.picBoxWielokat = new System.Windows.Forms.PictureBox();
             this.butClear = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.matxbPołożenieX = new System.Windows.Forms.TextBox();
+            this.matxbPołożenieY = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxTrojkat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxOkrag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxKwadrat)).BeginInit();
@@ -81,6 +83,7 @@
             this.picBoxPunkt.Size = new System.Drawing.Size(28, 32);
             this.picBoxPunkt.TabIndex = 6;
             this.picBoxPunkt.TabStop = false;
+            this.picBoxPunkt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picBoxPunkt_MouseClick);
             // 
             // notifyIcon1
             // 
@@ -110,20 +113,39 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 85);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(691, 438);
+            this.panel1.Size = new System.Drawing.Size(470, 353);
             this.panel1.TabIndex = 9;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            this.panel1.Move += new System.EventHandler(this.panel1_Move);
+            // 
+            // matxbPołożenieX
+            // 
+            this.matxbPołożenieX.Location = new System.Drawing.Point(55, 12);
+            this.matxbPołożenieX.Name = "matxbPołożenieX";
+            this.matxbPołożenieX.Size = new System.Drawing.Size(100, 20);
+            this.matxbPołożenieX.TabIndex = 10;
+            this.matxbPołożenieX.TextChanged += new System.EventHandler(this.matxbPołożenieX_TextChanged);
+            // 
+            // matxbPołożenieY
+            // 
+            this.matxbPołożenieY.Location = new System.Drawing.Point(189, 12);
+            this.matxbPołożenieY.Name = "matxbPołożenieY";
+            this.matxbPołożenieY.Size = new System.Drawing.Size(100, 20);
+            this.matxbPołożenieY.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.matxbPołożenieY);
+            this.Controls.Add(this.matxbPołożenieX);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.butClear);
             this.Controls.Add(this.picBoxWielokat);
@@ -139,6 +161,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPunkt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxWielokat)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -151,6 +174,8 @@
         private System.Windows.Forms.PictureBox picBoxWielokat;
         private System.Windows.Forms.Button butClear;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox matxbPołożenieX;
+        private System.Windows.Forms.TextBox matxbPołożenieY;
     }
 }
 

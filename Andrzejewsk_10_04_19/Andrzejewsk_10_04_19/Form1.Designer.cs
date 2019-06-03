@@ -39,11 +39,22 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rbWysokość = new System.Windows.Forms.RadioButton();
+            this.rbPromieńPodstawy = new System.Windows.Forms.RadioButton();
+            this.rbObjętość = new System.Windows.Forms.RadioButton();
+            this.rbPolePowierzchni = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.rbAutomatyczny = new System.Windows.Forms.RadioButton();
+            this.rbManulany = new System.Windows.Forms.RadioButton();
+            this.btnWłączSlajder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trbPromieńBryły)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbWysokośćBryły)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStopieńWielokąta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudKątNachyleniaBryły)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRysownica)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // trbPromieńBryły
@@ -153,11 +164,111 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Kąt nachylenia bryły geometrycznej";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rbPolePowierzchni);
+            this.panel1.Controls.Add(this.rbObjętość);
+            this.panel1.Controls.Add(this.rbPromieńPodstawy);
+            this.panel1.Controls.Add(this.rbWysokość);
+            this.panel1.Location = new System.Drawing.Point(179, 367);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(496, 73);
+            this.panel1.TabIndex = 9;
+            // 
+            // rbWysokość
+            // 
+            this.rbWysokość.AutoSize = true;
+            this.rbWysokość.Location = new System.Drawing.Point(3, 29);
+            this.rbWysokość.Name = "rbWysokość";
+            this.rbWysokość.Size = new System.Drawing.Size(75, 17);
+            this.rbWysokość.TabIndex = 0;
+            this.rbWysokość.TabStop = true;
+            this.rbWysokość.Text = "Wysokość";
+            this.rbWysokość.UseVisualStyleBackColor = true;
+            // 
+            // rbPromieńPodstawy
+            // 
+            this.rbPromieńPodstawy.AutoSize = true;
+            this.rbPromieńPodstawy.Location = new System.Drawing.Point(94, 29);
+            this.rbPromieńPodstawy.Name = "rbPromieńPodstawy";
+            this.rbPromieńPodstawy.Size = new System.Drawing.Size(111, 17);
+            this.rbPromieńPodstawy.TabIndex = 1;
+            this.rbPromieńPodstawy.TabStop = true;
+            this.rbPromieńPodstawy.Text = "Promień podstawy";
+            this.rbPromieńPodstawy.UseVisualStyleBackColor = true;
+            this.rbPromieńPodstawy.CheckedChanged += new System.EventHandler(this.rbPromieńPodstawy_CheckedChanged);
+            // 
+            // rbObjętość
+            // 
+            this.rbObjętość.AutoSize = true;
+            this.rbObjętość.Location = new System.Drawing.Point(211, 29);
+            this.rbObjętość.Name = "rbObjętość";
+            this.rbObjętość.Size = new System.Drawing.Size(67, 17);
+            this.rbObjętość.TabIndex = 2;
+            this.rbObjętość.TabStop = true;
+            this.rbObjętość.Text = "Objętosć";
+            this.rbObjętość.UseVisualStyleBackColor = true;
+            // 
+            // rbPolePowierzchni
+            // 
+            this.rbPolePowierzchni.AutoSize = true;
+            this.rbPolePowierzchni.Location = new System.Drawing.Point(284, 29);
+            this.rbPolePowierzchni.Name = "rbPolePowierzchni";
+            this.rbPolePowierzchni.Size = new System.Drawing.Size(103, 17);
+            this.rbPolePowierzchni.TabIndex = 3;
+            this.rbPolePowierzchni.TabStop = true;
+            this.rbPolePowierzchni.Text = "PolePowierzchni";
+            this.rbPolePowierzchni.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.rbManulany);
+            this.panel2.Controls.Add(this.rbAutomatyczny);
+            this.panel2.Location = new System.Drawing.Point(795, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(278, 121);
+            this.panel2.TabIndex = 10;
+            // 
+            // rbAutomatyczny
+            // 
+            this.rbAutomatyczny.AutoSize = true;
+            this.rbAutomatyczny.Location = new System.Drawing.Point(3, 26);
+            this.rbAutomatyczny.Name = "rbAutomatyczny";
+            this.rbAutomatyczny.Size = new System.Drawing.Size(91, 17);
+            this.rbAutomatyczny.TabIndex = 0;
+            this.rbAutomatyczny.TabStop = true;
+            this.rbAutomatyczny.Text = "Automatyczny";
+            this.rbAutomatyczny.UseVisualStyleBackColor = true;
+            // 
+            // rbManulany
+            // 
+            this.rbManulany.AutoSize = true;
+            this.rbManulany.Location = new System.Drawing.Point(3, 68);
+            this.rbManulany.Name = "rbManulany";
+            this.rbManulany.Size = new System.Drawing.Size(71, 17);
+            this.rbManulany.TabIndex = 1;
+            this.rbManulany.TabStop = true;
+            this.rbManulany.Text = "Manualny";
+            this.rbManulany.UseVisualStyleBackColor = true;
+            // 
+            // btnWłączSlajder
+            // 
+            this.btnWłączSlajder.Location = new System.Drawing.Point(892, 193);
+            this.btnWłączSlajder.Name = "btnWłączSlajder";
+            this.btnWłączSlajder.Size = new System.Drawing.Size(110, 58);
+            this.btnWłączSlajder.TabIndex = 11;
+            this.btnWłączSlajder.Text = "Włącz slajder";
+            this.btnWłączSlajder.UseVisualStyleBackColor = true;
+            this.btnWłączSlajder.Click += new System.EventHandler(this.btnWłączSlajder_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 366);
+            this.ClientSize = new System.Drawing.Size(1085, 452);
+            this.Controls.Add(this.btnWłączSlajder);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbRysownica);
@@ -174,6 +285,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudStopieńWielokąta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudKątNachyleniaBryły)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRysownica)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,6 +306,15 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton rbPolePowierzchni;
+        private System.Windows.Forms.RadioButton rbObjętość;
+        private System.Windows.Forms.RadioButton rbPromieńPodstawy;
+        private System.Windows.Forms.RadioButton rbWysokość;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton rbManulany;
+        private System.Windows.Forms.RadioButton rbAutomatyczny;
+        private System.Windows.Forms.Button btnWłączSlajder;
     }
 }
 

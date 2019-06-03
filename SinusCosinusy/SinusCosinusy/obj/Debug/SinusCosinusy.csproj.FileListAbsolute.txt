@@ -8,3 +8,13 @@ C:\Users\Michał\source\repos\SinusCosinusy\SinusCosinusy\obj\Debug\SinusCosinus
 C:\Users\Michał\source\repos\SinusCosinusy\SinusCosinusy\obj\Debug\SinusCosinusy.exe
 C:\Users\Michał\source\repos\SinusCosinusy\SinusCosinusy\obj\Debug\SinusCosinusy.pdb
 C:\Users\Michał\source\repos\SinusCosinusy\SinusCosinusy\obj\Debug\SinusCosinusy.Form1.resources
+C:\Users\Michał\Documents\GitHub\CSharp\SinusCosinusy\SinusCosinusy\bin\Debug\SinusCosinusy.exe.config
+C:\Users\Michał\Documents\GitHub\CSharp\SinusCosinusy\SinusCosinusy\bin\Debug\SinusCosinusy.exe
+C:\Users\Michał\Documents\GitHub\CSharp\SinusCosinusy\SinusCosinusy\bin\Debug\SinusCosinusy.pdb
+C:\Users\Michał\Documents\GitHub\CSharp\SinusCosinusy\SinusCosinusy\obj\Debug\SinusCosinusy.csprojAssemblyReference.cache
+C:\Users\Michał\Documents\GitHub\CSharp\SinusCosinusy\SinusCosinusy\obj\Debug\SinusCosinusy.Form1.resources
+C:\Users\Michał\Documents\GitHub\CSharp\SinusCosinusy\SinusCosinusy\obj\Debug\SinusCosinusy.Properties.Resources.resources
+C:\Users\Michał\Documents\GitHub\CSharp\SinusCosinusy\SinusCosinusy\obj\Debug\SinusCosinusy.csproj.GenerateResource.cache
+C:\Users\Michał\Documents\GitHub\CSharp\SinusCosinusy\SinusCosinusy\obj\Debug\SinusCosinusy.csproj.CoreCompileInputs.cache
+C:\Users\Michał\Documents\GitHub\CSharp\SinusCosinusy\SinusCosinusy\obj\Debug\SinusCosinusy.exe
+C:\Users\Michał\Documents\GitHub\CSharp\SinusCosinusy\SinusCosinusy\obj\Debug\SinusCosinusy.pdb

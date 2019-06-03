@@ -15,13 +15,15 @@ namespace Projekt_2_Andrzejewski_48660
     
     public partial class Form1 : Form
     {
-        
-        Graphics 
+        public static Form1 Uchwyt;
+        List<TypFigury> LBG = new List<TypFigury>();
+        Graphics Rysownica;
         bool paint = false;
         SolidBrush color;
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -45,6 +47,8 @@ namespace Projekt_2_Andrzejewski_48660
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
+
+
             if (paint)
             {
                 color = new SolidBrush(Color.Black);
@@ -85,6 +89,26 @@ namespace Projekt_2_Andrzejewski_48660
         private void button1_BackgroundImageLayoutChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void matxbPołożenieX_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void panel1_Move(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+        
+        }
+
+        private void picBoxPunkt_MouseClick(object sender, MouseEventArgs e)
+        {
+            
         }
     }
 }

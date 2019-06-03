@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Michał\\Documents\\Projekt2_Andrzejewski48660\\Projekt2_Andrzejewski48660\\Projekt2_Andrzejewski48660.csproj",
+      "projectUniqueName": "C:\\Users\\Michał\\Documents\\GitHub\\CSharp\\Projekt2_Andrzejewski48660\\Projekt2_Andrzejewski48660\\Projekt2_Andrzejewski48660.csproj",
       "projectName": "Projekt2_Andrzejewski48660",
-      "projectPath": "C:\\Users\\Michał\\Documents\\Projekt2_Andrzejewski48660\\Projekt2_Andrzejewski48660\\Projekt2_Andrzejewski48660.csproj",
+      "projectPath": "C:\\Users\\Michał\\Documents\\GitHub\\CSharp\\Projekt2_Andrzejewski48660\\Projekt2_Andrzejewski48660\\Projekt2_Andrzejewski48660.csproj",
       "packagesPath": "C:\\Users\\Michał\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Michał\\Documents\\Projekt2_Andrzejewski48660\\Projekt2_Andrzejewski48660\\obj\\",
+      "outputPath": "C:\\Users\\Michał\\Documents\\GitHub\\CSharp\\Projekt2_Andrzejewski48660\\Projekt2_Andrzejewski48660\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

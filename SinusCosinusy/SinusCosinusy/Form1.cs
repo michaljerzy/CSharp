@@ -69,7 +69,7 @@ namespace SinusCosinusy
 
             for(float x = 0; x < 20; x += 0.001F)
             {
-                y2 = (float)Math.Sin(x);
+                y2 = (float)Math.Pow(x,2);
 
                 //Rysownica.DrawEllipse(kolo, 50, 50, 200, 200);
 
